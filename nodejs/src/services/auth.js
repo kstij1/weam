@@ -259,16 +259,21 @@ const verifyLoginOtp = async (req) => {
     }
 }
 
+/**
+ * Resets a user's password using a reset hash for verification.
+ *
+ * @param {Object} req - The HTTP request object containing id, password, and resetHash.
+ * @returns {Promise<boolean>} - Returns true if the password was reset successfully.
+ * @throws {Error} - Throws error if the reset link is invalid or resetHash is missing/incorrect.
+ */
 const resetPassword = async (req) => {
     try {
-        let filter;
-        const { id, password } = req.body
-        if (req.body.resethash) {
-            filter = { _id: id, resetHash: req.body.resetHash }
-        } else {
-            filter = { _id: id }
+        const { id, password, resetHash } = req.body;
+        // Enforce that resetHash must be provided and valid
+        if (!resetHash) {
+            throw new Error(_localize('auth.invalid_link', req));
         }
-        const user = await User.findOne(filter);
+        const user = await User.findOne({ _id: id, resetHash: resetHash });
         if (!user) {
             throw new Error(_localize('auth.invalid_link', req));
         }
