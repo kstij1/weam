@@ -32,7 +32,6 @@
     "@reduxjs/toolkit": "^2.2.5",
     "@sentry/nextjs": "^9.11.0",
     "@tanstack/react-table": "^8.17.3",
-    "axios": "^1.7.2",
     "chart.js": "^4.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -73,7 +72,8 @@
     "socket.io-client": "^4.7.5",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
-    "yup": "^1.4.0"
+    "yup": "^1.4.0",
+    "axios": "^1.8.2"
   },
   "devDependencies": {
     "@babel/plugin-transform-optional-chaining": "^7.25.9",
