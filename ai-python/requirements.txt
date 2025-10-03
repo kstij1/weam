@@ -88,7 +88,7 @@ websockets==15.0.1
 xlrd==1.2.0
 XlsxWriter==3.2.0
 langchain==0.3.24
-langchain-community==0.3.23
+langchain-community==0.3.27
 langchain-openai==0.3.16
 langchain-core==0.3.59
 # torch==2.2.2
