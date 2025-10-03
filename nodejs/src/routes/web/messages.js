@@ -4,7 +4,7 @@ const threadController = require('../../controller/web/threadController');
 const { createConversationKeys, editMsgKeys, addReactionKeys, saveResponseTimeKeys } = require('../../utils/validations/thread');
 const { authentication } = require('../../middleware/authentication');
 const { checkPromptLimit } = require('../../middleware/promptlimit');
-router.put('/update/:id', validate(editMsgKeys), threadController.editMessage);
+router.put('/update/:id', authentication, validate(editMsgKeys), threadController.editMessage);
 router.post('/list', authentication, checkPromptLimit, threadController.getAll);
 router.post('/add-reaction', validate(addReactionKeys), authentication, threadController.addReaction);
 router.post('/send', validate(createConversationKeys), authentication, threadController.sendMessage)
