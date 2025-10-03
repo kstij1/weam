@@ -42,7 +42,7 @@ MarkupSafe==2.1.5
 olefile==0.47
 orjson==3.10.18
 pdfminer.six==20191110
-pillow==10.2.0
+pillow==11.3.0
 prometheus-client==0.20.0
 prometheus-fastapi-instrumentator==7.0.0
 prompt-toolkit==3.0.43
